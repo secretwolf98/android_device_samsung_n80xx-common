@@ -40,9 +40,7 @@ PRODUCT_COPY_FILES += \
 # Packages
 PRODUCT_PACKAGES += \
     camera.smdk4x12 \
-    libsecril-client \
-    GalaxyNoteTabSettings \
-    TVOutDummy
+    libsecril-client
 
 # These are the hardware-specific features
 PRODUCT_COPY_FILES += \
