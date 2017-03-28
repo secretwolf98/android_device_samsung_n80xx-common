@@ -1,7 +1,6 @@
 #!/bin/sh
 
-#
-# Copyright (C) 2017 The LineageOS Project
+# Copyright (C) 2012 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -39,8 +38,7 @@ for FILE in `cat proprietary-files.txt | grep -v ^# | grep -v ^$`; do
 done
 
 (cat << EOF) | sed s/__DEVICE__/$DEVICE/g | sed s/__MANUFACTURER__/$MANUFACTURER/g > $DEVICEMAKEFILE
-#
-# Copyright (C) 2017 The LineageOS Project
+# Copyright (C) 2012 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -74,8 +72,7 @@ done
 
 
 (cat << EOF) | sed s/__DEVICE__/$DEVICE/g | sed s/__MANUFACTURER__/$MANUFACTURER/g > ../../../$DEVICEOUTDIR/$DEVICE-vendor.mk
-#
-# Copyright (C) 2017 The LineageOS Project
+# Copyright (C) 2012 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
