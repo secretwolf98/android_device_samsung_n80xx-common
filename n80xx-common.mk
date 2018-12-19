@@ -14,10 +14,13 @@
 # limitations under the License.
 #
 
--include device/samsung/smdk4412-common/common.mk
+$(call inherit-product, device/samsung/smdk4412-common/common.mk)
+
+# Overlay
 DEVICE_PACKAGE_OVERLAYS += device/samsung/n80xx-common/overlay-common
 
-PRODUCT_AAPT_CONFIG := xlarge mdpi hdpi
+# Screen density
+PRODUCT_AAPT_CONFIG := xlarge
 PRODUCT_AAPT_PREF_CONFIG := mdpi
 
 TARGET_SCREEN_HEIGHT := 800
@@ -27,20 +30,69 @@ TARGET_SCREEN_WIDTH := 1280
 PRODUCT_COPY_FILES += \
     device/samsung/n80xx-common/ueventd.smdk4x12.rc:root/ueventd.smdk4x12.rc \
     device/samsung/n80xx-common/ueventd.smdk4x12.rc:recovery/root/ueventd.smdk4x12.rc \
-    device/samsung/n80xx-common/fstab.smdk4x12:root/fstab.smdk4x12
-
-# Recovery
-TARGET_RECOVERY_FSTAB := device/samsung/n80xx-common/fstab.smdk4x12
-RECOVERY_FSTAB_VERSION := 2
+    device/samsung/n80xx-common/rootdir/fstab.n80xx:root/fstab.smdk4x12
 
 # Audio
 PRODUCT_COPY_FILES += \
-    device/samsung/n80xx-common/configs/audio_policy.conf:system/etc/audio_policy.conf
+    device/samsung/n80xx-common/configs/audio_policy.conf:system/etc/audio_policy.conf \
+    device/samsung/n80xx-common/configs/tiny_hw.xml:system/etc/sound/n80xx
 
-# Packages
+# Camera
+PRODUCT_COPY_FILES += \
+    device/samsung/n80xx-common/configs/media_profiles.xml:system/etc/media_profiles.xml
+
 PRODUCT_PACKAGES += \
-    camera.smdk4x12 \
+    camera.smdk4x12
+
+
+# Product specific Packages
+PRODUCT_PACKAGES += \
+    tinyplay \
+    Snap \
+    libhwjpeg \
     libsecril-client
+
+# Sensors
+PRODUCT_PACKAGES += \
+    sensors.smdk4x12
+
+# Power
+PRODUCT_PACKAGES += \
+    power.smdk4x12
+
+# Gps
+PRODUCT_PACKAGES += \
+	gps.smdk4x12
+
+# RIL
+PRODUCT_PACKAGES += \
+	libsamsung_symbols \
+	libsecril-shim
+
+# f2fs
+PRODUCT_PACKAGES += \
+	fibmap.f2fs \
+	fsck.f2fs \
+	mkfs.f2fs
+
+# RIL
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.telephony.ril_class=SamsungExynos4RIL \
+    ro.telephony.call_ring.multiple=false \
+    ro.telephony.call_ring.delay=3000
+
+# ART
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.dex2oat-flags=--no-watch-dog \
+    dalvik.vm.dex2oat-swap=false
+
+# I/O Scheduler
+PRODUCT_PROPERTY_OVERRIDES += \
+    sys.io.scheduler=cfq
+
+# Stlport
+PRODUCT_PACKAGES += \
+    libstlport
 
 # These are the hardware-specific features
 PRODUCT_COPY_FILES += \

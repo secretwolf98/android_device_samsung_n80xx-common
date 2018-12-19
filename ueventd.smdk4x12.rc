@@ -17,11 +17,14 @@
 /dev/pmem_cam             0660   system     camera
 /dev/i2c-16               0666   system     system
 /dev/i2c-5                0666   system     system
+/dev/i2c-6                0660   system     system
 /dev/CEC                  0666   system     system
 /dev/HPD                  0666   system     system
 /dev/fimg2d               0666   system     graphics
 /dev/fmradio              0660   system     audio
 /dev/srp                  0660   system     audio
+/dev/srp_ctrl             0660   system     audio
+/dev/ttyGS*               0660   system     system
 /dev/umts*                0660   system     radio
 /dev/lte*                 0660   system     radio
 /dev/cdma*                0660   system     radio
@@ -29,7 +32,5 @@
 /dev/block/mmcblk0p4      0660   system     root
 /dev/block/mmcblk0p7      0660   system     radio
 /dev/ttyUSB0              0666   system     system
-
-/dev/ttySAC*	          0660	 root	 system
 
 /dev/input/*              0664   root       input
