@@ -33,7 +33,7 @@ LIBART_IMG_BASE := 0x30000000
 BOARD_PROVIDES_LIBRIL := true
 BOARD_MODEM_TYPE := xmm6262
 BOARD_GLOBAL_CFLAGS += -DDISABLE_ASHMEM_TRACKING
-BOARD_RIL_CLASS := ../../../device/samsung/n8000/ril
+BOARD_RIL_CLASS := ../../../device/samsung/n80xx-common/ril
 
 # Graphics
 TARGET_REQUIRES_SYNCHRONOUS_SETSURFACE := true
@@ -63,8 +63,9 @@ RECOVERY_FSTAB_VERSION := 2
 # PowerHAL
 TARGET_POWERHAL_VARIANT := pegasusq
 
-# SELinux
-BOARD_SEPOLICY_DIRS += device/samsung/n80xx-common/selinux
+# Selinux
+BOARD_SEPOLICY_DIRS += \
+    device/samsung/n80xx-common/selinux
 
 # inherit from the proprietary version
 -include vendor/samsung/n80xx-common/BoardConfigVendor.mk
