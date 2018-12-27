@@ -20,7 +20,7 @@ $(call inherit-product, device/samsung/smdk4412-common/common.mk)
 DEVICE_PACKAGE_OVERLAYS += device/samsung/n80xx-common/overlay-common
 
 # Screen density
-PRODUCT_AAPT_CONFIG := xlarge
+PRODUCT_AAPT_CONFIG := xlarge large normal
 PRODUCT_AAPT_PREF_CONFIG := mdpi
 
 TARGET_SCREEN_HEIGHT := 800
