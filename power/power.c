@@ -147,8 +147,10 @@ static void set_power_profile(int profile) {
     WRITE_PEGASUSQ_PARAM(profile, cpu_down_rate);
     WRITE_PEGASUSQ_PARAM(profile, sampling_rate);
     WRITE_PEGASUSQ_PARAM(profile, io_is_busy);
+#ifdef USE_PEGASUSQ_BOOSTING
     WRITE_PEGASUSQ_PARAM(profile, boost_freq);
     WRITE_PEGASUSQ_PARAM(profile, boost_mincpus);
+#endif
 
     current_power_profile = profile;
 
@@ -231,8 +233,10 @@ static void set_low_power(bool low_power) {
         WRITE_PEGASUSQ_PARAM(current_power_profile, cpu_down_rate);
         WRITE_PEGASUSQ_PARAM(current_power_profile, sampling_rate);
         WRITE_PEGASUSQ_PARAM(current_power_profile, io_is_busy);
+#ifdef USE_PEGASUSQ_BOOSTING
         WRITE_PEGASUSQ_PARAM(current_power_profile, boost_freq);
         WRITE_PEGASUSQ_PARAM(current_power_profile, boost_mincpus);
+#endif
 
         is_low_power = false;
     }
