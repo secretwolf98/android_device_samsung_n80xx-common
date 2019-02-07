@@ -44,6 +44,12 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     camera.smdk4x12
 
+# ConsumerIR
+PRODUCT_PACKAGES += \
+    consumerir.exynos4
+
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.consumerir.xml:system/etc/permissions/android.hardware.consumerir.xml
 
 # Product specific Packages
 PRODUCT_PACKAGES += \
