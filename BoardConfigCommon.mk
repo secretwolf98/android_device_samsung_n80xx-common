@@ -18,6 +18,10 @@
 # by BoardConfigVendor.mk
 -include device/samsung/smdk4412-common/BoardCommonConfig.mk
 
+# Kernel
+TARGET_KERNEL_SOURCE := kernel/samsung/smdk4412
+TARGET_KERNEL_CONFIG := lineageos_$(TARGET_DEVICE)_defconfig
+
 # Wifi
 WIFI_DRIVER_MODULE_PATH :=
 
