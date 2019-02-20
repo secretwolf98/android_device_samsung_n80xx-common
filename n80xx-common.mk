@@ -20,7 +20,7 @@ $(call inherit-product, device/samsung/smdk4412-common/common.mk)
 DEVICE_PACKAGE_OVERLAYS += device/samsung/n80xx-common/overlay-common
 
 # Screen density
-PRODUCT_AAPT_CONFIG := xlarge large normal
+PRODUCT_AAPT_CONFIG := xlarge mdpi
 PRODUCT_AAPT_PREF_CONFIG := mdpi
 
 TARGET_SCREEN_HEIGHT := 800
@@ -99,13 +99,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     sys.io.scheduler=cfq
 
-# Stlport
-PRODUCT_PACKAGES += \
-    libstlport
-
 # These are the hardware-specific features
 PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/tablet_core_hardware.xml:system/etc/permissions/tablet_core_hardware.xml
+    frameworks/native/data/etc/tablet_core_hardware.xml:system/etc/permissions/tablet_core_hardware.xml \
+    frameworks/native/data/etc/android.hardware.camera.xml:system/etc/permissions/android.hardware.camera.xml \
+    frameworks/native/data/etc/android.software.connectionservice.xml:system/etc/permissions/android.software.connectionservice.xml
 
 # Set product characteristic to tablet, needed for some ui elements
 PRODUCT_CHARACTERISTICS := tablet
