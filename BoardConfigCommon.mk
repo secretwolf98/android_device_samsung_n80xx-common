@@ -24,6 +24,9 @@ WIFI_DRIVER_MODULE_PATH :=
 # Headers
 TARGET_SPECIFIC_HEADER_PATH += device/samsung/n80xx-common/include
 
+#Bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/n80xx-common/bluetooth
+
 # Bionic
 MALLOC_SVELTE := true
 TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
