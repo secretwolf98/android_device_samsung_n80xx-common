@@ -67,6 +67,9 @@ PRODUCT_PACKAGES += \
     power.smdk4x12
 
 # Gps
+PRODUCT_COPY_FILES += \
+    device/samsung/n80xx-common/configs/gps.xml:system/etc/gps.xml
+
 PRODUCT_PACKAGES += \
 	gps.smdk4x12
 
