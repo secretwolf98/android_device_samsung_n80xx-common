@@ -55,7 +55,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     tinyplay \
     Snap \
-    libhwjpeg \
     libsecril-client
 
 # Sensors
