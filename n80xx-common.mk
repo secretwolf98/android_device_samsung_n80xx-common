@@ -16,8 +16,10 @@
 
 $(call inherit-product, device/samsung/smdk4412-common/common.mk)
 
+LOCAL_PATH := device/samsung/n80xx-common
+
 # Overlay
-DEVICE_PACKAGE_OVERLAYS += device/samsung/n80xx-common/overlay-common
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-common
 
 # Screen density
 PRODUCT_AAPT_CONFIG := xlarge mdpi
@@ -28,18 +30,18 @@ TARGET_SCREEN_WIDTH := 1280
 
 # Init files
 PRODUCT_COPY_FILES += \
-    device/samsung/n80xx-common/ueventd.smdk4x12.rc:root/ueventd.smdk4x12.rc \
-    device/samsung/n80xx-common/ueventd.smdk4x12.rc:recovery/root/ueventd.smdk4x12.rc \
-    device/samsung/n80xx-common/rootdir/fstab.n80xx:root/fstab.smdk4x12
+    $(LOCAL_PATH)/rootdir/ueventd.smdk4x12.rc:root/ueventd.smdk4x12.rc \
+    $(LOCAL_PATH)/rootdir/ueventd.smdk4x12.rc:recovery/root/ueventd.smdk4x12.rc \
+    $(LOCAL_PATH)/rootdir/fstab.n80xx:root/fstab.smdk4x12
 
 # Audio
 PRODUCT_COPY_FILES += \
-    device/samsung/n80xx-common/configs/audio_policy.conf:system/etc/audio_policy.conf \
-    device/samsung/n80xx-common/configs/tiny_hw.xml:system/etc/sound/n80xx
+    $(LOCAL_PATH)/configs/audio_policy.conf:system/etc/audio_policy.conf \
+    $(LOCAL_PATH)/configs/tiny_hw.xml:system/etc/sound/tiny_hw.xml
 
 # Camera
 PRODUCT_COPY_FILES += \
-    device/samsung/n80xx-common/configs/media_profiles.xml:system/etc/media_profiles.xml
+    $(LOCAL_PATH)/configs/media_profiles.xml:system/etc/media_profiles.xml
 
 PRODUCT_PACKAGES += \
     camera.smdk4x12
@@ -67,7 +69,7 @@ PRODUCT_PACKAGES += \
 
 # Gps
 PRODUCT_COPY_FILES += \
-    device/samsung/n80xx-common/configs/gps.xml:system/etc/gps.xml
+    $(LOCAL_PATH)/configs/gps.xml:system/etc/gps.xml
 
 PRODUCT_PACKAGES += \
 	gps.smdk4x12
