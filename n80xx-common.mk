@@ -37,7 +37,7 @@ PRODUCT_COPY_FILES += \
 # Audio
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio_policy.conf:system/etc/audio_policy.conf \
-    $(LOCAL_PATH)/configs/tiny_hw.xml:system/etc/sound/tiny_hw.xml
+    $(LOCAL_PATH)/configs/tiny_hw.xml:system/etc/sound/n80xx
 
 # Camera
 PRODUCT_COPY_FILES += \
