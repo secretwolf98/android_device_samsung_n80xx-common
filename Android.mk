@@ -16,7 +16,7 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifneq ($(filter n8000 n8010 n8013 n8020,$(TARGET_DEVICE)),)
+ifneq ($(filter n8000 n8010 n8013,$(TARGET_DEVICE)),)
 
 include $(call all-makefiles-under,$(LOCAL_PATH))
 
